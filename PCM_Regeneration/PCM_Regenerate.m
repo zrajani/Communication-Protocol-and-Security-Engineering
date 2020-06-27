@@ -43,6 +43,15 @@ ylabel('Amplitude \rightarrow');
 
 %% Pulse Train Signal (Timing Circuit)
 
-discrete_time=0:100;                   %Discrete Time for timing 
+discrete_time=0:100;                   % Discrete Time for timing 
 pulse_signal=[ones(1,101)];            % Generate Pulse Signal 
+
+figure                                 % Create a new figure
+%Plot the pulse signal 
+stem(discrete_time,pulse_signal,'LineWidth',2)
+%Label the plot
+title('Pulse Train Signal');
+xlabel('Discrete Time n \rightarrow');
+ylabel('Amplitude \rightarrow');
+
 
