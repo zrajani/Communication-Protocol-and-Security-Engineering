@@ -136,6 +136,4 @@ end
 % Calculate the bit error rate and display the results
 
 bit_error_rate = (initial_counter - final_counter)/initial_counter;
-sprintf("\n\n Bit Error rate = %.3f",bit_error_rate)
-
-%%%%%%%%%% END OF THE PROGRAM %%%%%%%%%%%%%
+printf("\n\n Bit
