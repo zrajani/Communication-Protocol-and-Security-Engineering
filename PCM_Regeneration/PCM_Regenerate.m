@@ -109,4 +109,33 @@ title('Decision Signal Continuous Wave');
 xlabel('Time Continous \rightarrow');
 ylabel('Amplitude \rightarrow');
 
-%% 
+%% Calculate the Bit error rate 
+
+initial_counter=0;                  % Counter Variable
+
+i=1;                                % Incrementing Loop Variable
+
+% This loop counts the number of bits transmitted at the input stage 
+
+while(i<=100)
+    if (final_input(1,i)>0)
+        initial_counter=initial_counter+1;
+    end 
+    i=i+1;
+end 
+
+final_counter=0;
+i=1;
+while (i<=100)
+    if (decision_stage(1,i)>0)
+        final_counter=final_counter+1;
+    end 
+    i=i+1;
+end 
+
+% Calculate the bit error rate and display the results
+
+bit_error_rate = (initial_counter - final_counter)/initial_counter;
+printf("\n\n Bit Error rate = %d",bit_error_rate); 
+
+%%%%%%%%%% END OF THE PROGRAM %%%%%%%%%%%%%
