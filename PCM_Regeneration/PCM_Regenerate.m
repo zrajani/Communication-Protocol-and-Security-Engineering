@@ -93,6 +93,20 @@ while (i<=100)
     i=i+1;
 end 
 
-disp(decision_stage);            % Display the decision signal
+disp(decision_stage);              % Display the decision signal
 
-subplot(3,1,3)                   % 3rd Division Plot
+subplot(3,1,3)                     % 3rd Division Plot
+stem(decision_stage,'LineWidth',2) % Signal to plot
+% Label the plot
+title('Decision Signal Discrete Type');
+xlabel('Discrete Time (n) \rightarrow');
+ylabel('Amplitude \rightarrow');
+
+subplot(3,1,2)                      % 2nd Division Plot
+plot(decision_stage,'m-*','LineWidth',2); % Signal Plot
+% Label the signal 
+title('Decision Signal Continuous Wave');
+xlabel('Time Continous \rightarrow');
+ylabel('Amplitude \rightarrow');
+
+%% 
