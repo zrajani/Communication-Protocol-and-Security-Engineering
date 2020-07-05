@@ -58,9 +58,9 @@ ylabel('Amplitude \rightarrow');
 
 amplification_factor=2;                % Signal Equalised by
 
-threshold_level=3;                     % Set the threshold level
+threshold_level=4;                     % Set the threshold level
 
-equaliser_signal=amplification_factor*final_input; % Final Signal Input
+equaliser_signal=amplification_factor*final_input.*pulse_signal; % Final Signal Input
 
 figure;                                % Create a new plot
 subplot(3,1,1)                         % Plot first division
