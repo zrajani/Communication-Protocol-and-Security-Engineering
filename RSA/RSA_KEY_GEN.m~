@@ -1,0 +1,77 @@
+
+% Author: Zain Rajani 
+
+% Software: MATLAB (R2020a)
+
+%% Starting Screen 
+
+clc;
+clear all;
+close all;
+c= newline;                                 % Create a new line variable like \n 
+disp(c);                                    % Display the character
+disp('      Lab Topic: Key Generation through RSA Algorithm'); % Display line 
+disp(c);                                    % Go on a new line 
+
+%% Step 1: Select n whose key needs to be found 
+
+% Ask the user what has to be for what the key has to be generated 
+
+n = input('   Enter the number whose key needs to be found: ');
+disp(c);                                    % Go to new line 
+
+%% Step 2: Finding the factors of n as p and q 
+
+factors = factor(n);                        % Find the factors for which key needs to be generated 
+p = factors(1);                             % Write the factors in different variables 
+q = factors(2);                             % Write the factors in different variables 
+
+%% Step 3: Compute phi(n)
+
+phi_n = (p-1)*(q-1);                        % Formula to compute Φ(n) 
+
+%% Step 4: Public key 'e'
+
+% Display the statements 
+
+disp('   Choose the value of e it should be below Φ(n)');
+disp(c);                                    % New line command
+fprintf('   Your Current Φ(%.1f) =%.1f\n',n,phi_n)      % Print values for user reference 
+disp(c)                                     % New line command 
+e = input('   Enter the public key data: ');% Wait for user to enter the public key it has 
+disp(c);                                    % New Line command 
+
+%% Step 5: Calculate the modulus d of Φ(n) with Euclidean Theorm 
+
+% The below loop check if the entered public key value is within the
+% accepted conditions or no
+
+if (1<e && e<phi_n)             
+    disp('   Public Key e Accepted......');
+    disp(c);
+    i=1;
+    remainder=1;
+    while (0<remainder)
+        k=(phi_n*i)+1;
+        remainder=rem(k,e);
+        i=i+1;
+    end
+else 
+    disp('   Aborting please restart the process......');
+    disp(c);
+end
+
+%% Step 6: Calculate the private key 'd' and Display the keys
+
+% (n,e) -----> public key
+% (n,d) -----> private key
+
+d = k/e; 
+
+disp('   Process Completed........');
+disp(c);
+fprintf('   Public key Generated is (%.1f,%.1f)\n',n,e);
+disp(c);
+fprintf('   Private key Generated is (%.1f,%.1f)\n',n,d);
+disp(c);
+disp('********** RSA KEY GENERATION ENDED **********');
