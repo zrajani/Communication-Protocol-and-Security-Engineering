@@ -25,13 +25,13 @@ disp(c);                                    % Go to new line
 %% Step 2: Finding the factors of n as p and q 
 
 factors = factor(n);                       % Find the factors for which key needs to be generated
-p = factor(1);                             % Write the factors in different variables 
-q = factor(2);                             % Write the factors in different variables 
+p = factors(1);                             % Write the factors in different variables 
+q = factors(2);                             % Write the factors in different variables 
 
 %% Step 3: Compute phi(n)
 
-%phi_n = (p-1)*(q-1);                        % Formula to compute Φ(n) 
-phi_n=(p-1,q-1);
+phi_n = (p-1)*(q-1);                        % Formula to compute Φ(n) 
+%phi_n=lcm(p-1,q-1);
 %% Step 4: Enciphering exponent 'e'
 
 % Display the statements 
