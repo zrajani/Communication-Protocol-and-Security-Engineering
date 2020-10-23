@@ -6,3 +6,5 @@ Concepts of Communication Engineering following some security coding used in tra
 *MATLAB License Type: Student Version*
 
 *Hardware Used: Beaglebone Black with latest Debian Image and Accelerometer ADXL345*
+
+** Update Readme Pending 
