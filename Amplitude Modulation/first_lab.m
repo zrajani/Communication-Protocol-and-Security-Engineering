@@ -1,8 +1,3 @@
-%% LAB SOLUTION # 1 
-
-% Author: Zain Rajani 
-% Student ID: C0752681
-
 % Initialise
 
 clc;
